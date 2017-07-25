@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 	<constant name="struts.devMode" value="true" />
+ 	<constant name="struts.objectFactory" value="spring" />
+ 	
+	<package name="default-package" namespace="/" extends="struts-default">
+	
+		<default-action-ref name="home" />
+		<global-results>
+		<result name="error">/pages/globalError.jsp</result>
+		</global-results>
+		
+		<action name="home" class="homeAction">
+			<result name="success">/pages/index.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="user-package" namespace="/user" extends="default-package">
+		<action name="addUser" class="homeAction" method="addUser">
+			<result name="success" type="redirectAction">
+		        <param name="actionName">getUserList</param>
+		        <param name="namespace">/user</param>
+		        <param name="userBean.addUserSuccess">${userBean.addUserSuccess}</param>
+		    </result>
+		</action>
+		<action name="*" class="homeAction" method="{1}">
+			<result name="success">/pages/{1}.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>

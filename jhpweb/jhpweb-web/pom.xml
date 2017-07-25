@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.jujuapps.jhp</groupId>
+		<artifactId>jhpweb</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>jhpweb-web</artifactId>
+	<packaging>war</packaging>
+	<name>jhpweb-web</name>
+	<description>jhpweb-web</description>
+	<dependencies>
+	<dependency>
+		<groupId>com.jujuapps.jhp</groupId>
+		<artifactId>jhpweb-core</artifactId>
+		<version>1.0</version>
+	</dependency>
+	</dependencies>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					 <version>2.4</version>
+					<configuration>
+						<webappDirectory>D:/a07752a/software/tomcat8/webapps/${name}</webappDirectory>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+    <artifactId>maven-clean-plugin</artifactId>
+    <version>3.0.0</version>
+    <configuration>
+      <filesets>
+        <fileset>
+          <directory>D:/a07752a/software/tomcat8/webapps/${name}</directory>
+          <!-- <includes>
+            <include>**/*.tmp</include>
+            <include>**/*.log</include>
+          </includes>
+          <excludes>
+            <exclude>**/important.log</exclude>
+            <exclude>**/another-important.log</exclude>
+          </excludes> -->
+          <followSymlinks>false</followSymlinks>
+        </fileset>
+      </filesets>
+    </configuration>
+  </plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

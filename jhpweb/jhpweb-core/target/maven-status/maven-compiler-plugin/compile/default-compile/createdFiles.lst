@@ -1,0 +1,9 @@
+com\jujuapps\jhp\jhpweb\app\dao\UserDaoImpl.class
+com\jujuapps\jhp\jhpweb\app\util\JHPUtil.class
+com\jujuapps\jhp\jhpweb\app\bean\UserBean.class
+com\jujuapps\jhp\jhpweb\app\service\UserService.class
+com\jujuapps\jhp\jhpweb\web\action\HomeAction.class
+com\jujuapps\jhp\jhpweb\app\dao\UserDao.class
+com\jujuapps\jhp\jhpweb\app\entity\User.class
+com\jujuapps\jhp\jhpweb\app\service\UserServiceImpl.class
+com\jujuapps\jhp\jhpweb\app\bean\HomeBean.class
